@@ -10,7 +10,7 @@ RUN apk add --no-cache git ca-certificates
 # Bezpieczne wstrzyknięcie tokenu z pliku
 RUN --mount=type=secret,id=github_token \
     TOKEN=$(cat /run/secrets/github_token) && \
-    git clone https://${TOKEN}@[github.com/JakubGwo/docker-pogoda-app.git](https://github.com/JakubGwo/docker-pogoda-app.git) .
+    git clone https://${TOKEN}@github.com/JakubGwo/PAwChOZadanie1Dodatkowe.git .
 
 # Inicjalizacja modułu i statyczna kompilacja kodu w języku Go
 # CGO_ENABLED=0 jest kluczowe dla działania aplikacji w warstwie scratch
