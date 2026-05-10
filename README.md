@@ -1,15 +1,7 @@
-## Zadanie 1 Dodatkowe, część 3. Zrzuty ekranowe potiwerdzające wykonane polecenia znajdują sie w folderze screenshots, token zabezpieczony za pomocą .gitignore nie wysłany do repozytorium
+## Zadanie 1 - dodatkowe, część 3. Zrzuty ekranowe potiwerdzające wykonane polecenia znajdują sie w folderze screenshots, token zabezpieczony za pomocą .gitignore nie wysłany do repozytorium.
 
 ### 1. Plik Dockerfile (BuildKit, Cache, mount=secret)
 Zastosowano rozszerzony BuildKit. Kod pobierany jest bezpośrednio z repozytorium GitHub za pomocą wstrzykiwania poświadczeń (secret).
-
-## Fragment zmian z Dockerfile
-RUN apk add --no-cache git ca-certificates
-RUN --mount=type=secret,id=github_token \
-    TOKEN=$(cat /run/secrets/github_token) && \
-    git clone https://${TOKEN}@github.com/JakubGwo/PAwChOZadanie1Dodatkowe.git .
-RUN go mod init weatherapp && \
-    CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o weatherapp main.go
 
 ### 2. Potwierdzenie deklaracji platform sprzętowych w manifeście
 
