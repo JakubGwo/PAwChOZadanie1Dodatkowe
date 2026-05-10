@@ -4,8 +4,7 @@ FROM golang:1.21-alpine AS builder
 WORKDIR /app
 
 # Instalacja certyfikatów SSL i gita
-RUN apk --no-cache git ca-certificates
-
+RUN apk add --no-cache git ca-certificates
 
 
 # Bezpieczne wstrzyknięcie tokenu z pliku
